@@ -1,6 +1,6 @@
 <div class="wrapper">
   <p class="level">Уровень {{ data.levelNumber }}</p>
-  <div class="words">
+  <div class="words" [style]="calcHeight()">
     @for(item of data.words; track $index){
       <div class="word">
         @if(data.findedWords.includes($index)){

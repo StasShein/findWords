@@ -90,6 +90,10 @@ export class MainComponent implements OnInit, DoCheck {
       : `transform: rotate(${(360 / this.data.wordArr.length) * index}deg)`;
   }
 
+  public calcHeight() {
+    return `max-height: ${(window.innerHeight - 344)}px`
+  }
+
   public calcWordBlock() {
     const calc = (380 - 10 * this.data.words.length) / this.data.words.length;
     const maxCalc =
