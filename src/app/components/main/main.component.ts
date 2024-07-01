@@ -91,7 +91,11 @@ export class MainComponent implements OnInit, DoCheck {
   }
 
   public calcHeight() {
-    return `max-height: ${(window.innerHeight - 344)}px`
+    if(window.innerWidth < 450){
+      return `max-height: ${(window.innerHeight - 344)}px`
+    }else{
+      return
+    }
   }
 
   public calcWordBlock() {

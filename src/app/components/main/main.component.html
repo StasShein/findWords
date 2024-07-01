@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" chooseWords chooseWordsMobile>
   <p class="level">Уровень {{ data.levelNumber }}</p>
   <div class="words" [style]="calcHeight()">
     @for(item of data.words; track $index){
@@ -25,7 +25,7 @@
       <div class="find">{{ item }}</div>
     }
   </div>
-  <div class="circle" chooseWords chooseWordsMobile>
+  <div class="circle">
     @for(word of data.wordArr; track $index){
       <div class="block" [style]="calcDeg($index)">
         <div
