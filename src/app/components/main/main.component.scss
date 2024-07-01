@@ -1,0 +1,191 @@
+.wrapper {
+  height: 100vh;
+  position: relative;
+
+  .level {
+    font-size: 21px;
+    margin: 20px auto;
+    width: fit-content;
+    line-height: 0;
+  }
+
+  .words {
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-height: calc((380 / 700) * 100%);
+    gap: 10px 60px;
+    margin: 0 auto;
+    align-items: center;
+
+    .word {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .word-block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 80px;
+        max-width: 80px;
+        min-width: 40px;
+        min-height: 40px;
+        border-radius: 10px;
+        font-size: 42px;
+      }
+
+      .complete {
+        background-color: #65bd65;
+        box-sizing: border-box;
+        padding-bottom: 10px;
+      }
+
+      .hidden {
+        background-color: white;
+      }
+    }
+  }
+
+  .finded-word {
+    display: flex;
+    gap: 10px;
+    width: fit-content;
+    height: 32px;
+    margin: 10px auto;
+
+    .find {
+      width: 32px;
+      background-color: white;
+      border-radius: 10px;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      padding-bottom: 5px;
+    }
+  }
+
+  .circle {
+    border-radius: 50%;
+    border: 20px solid gray;
+    height: 125px;
+    width: 125px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    display: flex;
+    gap: 30px;
+
+    .block {
+      position: absolute;
+      top: -54px;
+      left: 35px;
+      transform-origin: 30px 115px;
+      margin-right: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &-inner {
+        border-radius: 50%;
+        background-color: white;
+        color: black;
+        height: 60px;
+        width: 60px;
+        font-size: 40px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+        box-shadow: 0px 5px 0px 0px #a6a8ab;
+        box-sizing: border-box;
+        padding-bottom: 10px;
+
+        &.active {
+          background-color: #e96fa4;
+          box-shadow: 0px 5px 0px 0px rgba(175, 99, 140, 1);
+        }
+      }
+    }
+  }
+}
+
+.background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #0000003a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .non-actual {
+    width: 530px;
+    height: 430px;
+    background-color: white;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+
+    &::after {
+      content: "Две вкладки с игрой?";
+      background-image: url("/assets/popup_ribbon.svg");
+      background-repeat: no-repeat;
+      position: absolute;
+      top: -19px;
+      width: 385px;
+      height: 115px;
+      font-size: 40px;
+      line-height: 1;
+    }
+
+    p {
+      color: black;
+      font-size: 32px;
+      line-height: 1;
+    }
+
+    .reload-button {
+      border: 0;
+      background-color: #65bd65;
+      box-shadow: 0px 5px 0px 0px #508853;
+      border-radius: 50px;
+      font-size: 42px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .wrapper {
+    .words {
+      width: 100%;
+      max-height: 510px;
+      flex-wrap: nowrap;
+      overflow-y: scroll;
+      gap: 5px;
+      scrollbar-width: thin;
+      scrollbar-color: white transparent;
+
+      .word {
+        gap: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+	font-family: "VAG World";
+	src: url("/assets/fonts/vag-world/vag-world-bold.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+*{
+  font-family: 'VAG World', 'cursive';
+  color: white;
+}
+
+body{
+  background-color: #2B344B;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
