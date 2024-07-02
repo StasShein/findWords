@@ -94,7 +94,7 @@ export class MainComponent implements OnInit, DoCheck {
     if(window.innerWidth < 450){
       return `max-height: ${(window.innerHeight - 344)}px`
     }else{
-      return
+      return `max-height: ${(window.innerHeight - 320)}px`
     }
   }
 

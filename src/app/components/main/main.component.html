@@ -20,22 +20,25 @@
     }
   </div>
 
-  <div class="finded-word">
-    @for(item of data.addedLetters; track item){
-      <div class="find">{{ item }}</div>
-    }
-  </div>
-  <div class="circle">
-    @for(word of data.wordArr; track $index){
-      <div class="block" [style]="calcDeg($index)">
-        <div
-          class="block-inner block-{{ $index }}"
-          [style]="calcDeg($index, true)"
-        >
-          {{ word }}
+
+  <div class="circle-wrapper">
+    <div class="finded-word">
+      @for(item of data.addedLetters; track item){
+        <div class="find">{{ item }}</div>
+      }
+    </div>
+    <div class="circle">
+      @for(word of data.wordArr; track $index){
+        <div class="block" [style]="calcDeg($index)">
+          <div
+            class="block-inner block-{{ $index }}"
+            [style]="calcDeg($index, true)"
+          >
+            {{ word }}
+          </div>
         </div>
-      </div>
-    }
+      }
+    </div>
   </div>
 </div>
 
